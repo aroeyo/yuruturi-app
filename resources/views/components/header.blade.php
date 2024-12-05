@@ -1,6 +1,6 @@
 <div class="header-main wrapper"> 
     <div>
-        <a href=""> <img src="{{asset('images/title-logo.png')}}" alt="サイトロゴ" class="logo" width="150px" height="auto"></a>
+        <a href="/"><img src="{{asset('images/title-logo.png')}}" alt="サイトロゴ" class="logo" width="150px" height="auto"></a>
    </div>
 
    <div>
@@ -14,7 +14,7 @@
         <li><a href="">アルバム</a></li>
         <li><a href="">気象情報</a></li>
         <li><a href="">ランキング</a></li>
-        <li><a href="">問い合わせ</a></li>
+        <li><a href="{{ url('contact/show') }}">問い合わせ</a></li>
     </ul>
 </nav>
 

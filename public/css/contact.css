@@ -1,0 +1,80 @@
+.contact {
+    width: 500px;
+    margin: 70px auto;
+}
+
+.contact h2 {
+    margin-bottom: 10px;
+}
+
+.border {
+    border: 2px #000 solid;
+}
+
+form {
+    margin-top: 30px;
+}
+
+.formgroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border-bottom: 1px #000 solid;
+}
+
+.formgroup label {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    align-items: center;
+}
+
+.field {
+    width: 300px;
+    line-height: 0;
+}
+
+.formgroup input {
+    width: 300px;
+}
+
+.formgroup {
+    width: 500px;
+}
+
+.field textarea {
+    width: 300px;
+    height: 100px;
+}
+
+.text-area {
+    width: 300px;
+    height: 150px;
+    line-height: 20px;
+}
+
+.contactarea {
+    height: 150px;
+}
+
+.btnposition {
+    height: 100px;
+    line-height: 100px;
+    margin-left: 200px;
+}
+
+.btnarea {
+    width: 500px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.confirmtext {
+    font-size: 20px;
+    text-align: center;
+}
+
+.space {
+    height: 250px;
+}

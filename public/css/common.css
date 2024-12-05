@@ -4,5 +4,33 @@ body {
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.container{
+.submitbtn, .backbtn {
+    width: 30px;
+    padding: 5px 20px;
+}
+
+.submitbtn {
+    background-color: #1E90FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.submitbtn:hover {
+    background-color: #0000CD;
+    transform: scale(1.10);
+    cursor: pointer;
+}
+
+.backbtn {
+    background-color: #D3D3D3;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+}
+
+.backbtn:hover {
+    background-color: #708090;
+    transform: scale(1.10);
+    cursor: pointer;
 }
