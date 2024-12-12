@@ -38,8 +38,8 @@
     </div>
 
     <div class="btnarea">
-        <buttun type="submit" class="submitbtn">送信</buttun>
-        <buttun type="buttun" class="backbtn">戻る</buttun>
+        <button type="submit" class="submitbtn">送信</button>
+        <button type="buttun" class="backbtn" onclick="window.location.href='{{ url('/contact/show/') }}'">戻る</button>
     </div>
 
 </form>

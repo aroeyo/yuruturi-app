@@ -1,0 +1,85 @@
+.albumdetail {
+    margin: 20px auto;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border: 1px #000 solid;
+}
+
+.detailimagewrapper {
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+}
+
+.albumdetail img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.detailinfo  {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.detailnotes {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.notes {
+    min-height: 50px;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.btnarea {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.submitbtn, .backbtn{
+    margin: 10px;
+    padding: 8px 20px;
+}
+
+form {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.detailform {
+    height: 20px;
+}
+
+.field textarea{
+width: 100%;
+height: 100px;
+}
+
+.uploadarea {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.uploadarea label {
+    font-weight: bold;
+}
+
+.confirmtext {
+    font-size: 20px;
+    text-align: center;
+}
+
+.space {
+    height: 250px;
+}

@@ -57,17 +57,21 @@ form {
     height: 150px;
 }
 
-.btnposition {
-    height: 100px;
-    line-height: 100px;
-    margin-left: 200px;
+.btnarea {
+    width: 500px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.submitbtn, .backbtn {
+    margin: 0 10px;
+    padding: 8px 20px;
 }
 
 .btnarea {
     width: 500px;
-    height: 100px;
-    line-height: 100px;
     text-align: center;
+    margin-top: 50px;
 }
 
 .confirmtext {

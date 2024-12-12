@@ -4,10 +4,7 @@ body {
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.submitbtn, .backbtn {
-    width: 30px;
-    padding: 5px 20px;
-}
+
 
 .submitbtn {
     background-color: #1E90FF;

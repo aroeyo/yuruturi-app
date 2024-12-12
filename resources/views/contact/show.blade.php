@@ -40,8 +40,9 @@
             <textarea id="message" name="message" required></textarea>
         </div>
     </div>
-
-    <buttun type="submit" class="submitbtn btnposition">確認</buttun>
+    <div class="btnarea">
+        <button type="submit" class="submitbtn">確認</button>
+    </div>
 
 </form>
 
