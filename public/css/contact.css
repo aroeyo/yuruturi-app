@@ -1,6 +1,9 @@
 .contact {
-    width: 500px;
-    margin: 70px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 70px;      
 }
 
 .contact h2 {
@@ -80,5 +83,5 @@ form {
 }
 
 .space {
-    height: 250px;
+    margin-bottom : 250px;
 }

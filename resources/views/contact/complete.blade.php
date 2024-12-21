@@ -12,7 +12,7 @@
 <div class="contact">
 <p class="confirmtext">問い合わせを受け付けました。</p>
 
-<buttun type="buttun" class="backbtn btnposition" onclick="window.location.href='{{ url('/contact/show/') }}'">戻る</buttun>
+<button type="button" class="backbtn btnposition" onclick="window.location.href='{{ url('/contact/show/') }}'">戻る</button>
 
 <div class="space"></div>
 

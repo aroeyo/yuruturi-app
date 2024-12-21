@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RankingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'index']);
@@ -15,6 +16,7 @@ Route::get('/album/albumid',[AlbumController::class, 'albumid']);
 Route::get('/album/albumedit',[AlbumController::class, 'albumedit']);
 Route::get('/album/albumcreate',[AlbumController::class, 'albumcreate']);
 Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete']);
+Route::get('/rankings/ranking',[RankingController::class, 'ranking']);
 
 
 //Route::get('/', function () {
