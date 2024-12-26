@@ -7,7 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RankingController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[HomeController::class, 'index']);
+Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/contact/show',[ContactController::class, 'show']);
 Route::post('/contact/confirm',[ContactController::class, 'confirm']);
 Route::get('/contact/complete',[ContactController::class, 'complete']);

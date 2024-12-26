@@ -3,6 +3,7 @@
         <a href="/"><img src="{{asset('images/title-logo.png')}}" alt="サイトロゴ" class="logo" width="150px" height="auto"></a>
    </div>
 
+@if($showMenu)
    <div>
         <a href="">会員登録</a>
    </div>
@@ -17,5 +18,6 @@
         <li><a href="{{ url('contact/show') }}">問い合わせ</a></li>
     </ul>
 </nav>
+@endif
 
 <hr>

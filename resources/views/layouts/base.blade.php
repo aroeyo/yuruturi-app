@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <header>
-            @include('components.header')
+            <x-header :showMenu="$showMenu ?? true" />
         </header>
 
         <main>
@@ -24,7 +24,7 @@
         </main>
 
         <footer>
-            @include('components.footer')
+            <x-footer :showFooterMenu="$showFooterMenu ?? true" />
         </footer>
     </div>
 </body>
