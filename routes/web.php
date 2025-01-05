@@ -8,15 +8,18 @@ use App\Http\Controllers\RankingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
-Route::get('/contact/show',[ContactController::class, 'show']);
-Route::post('/contact/confirm',[ContactController::class, 'confirm']);
-Route::get('/contact/complete',[ContactController::class, 'complete']);
-Route::get('/album/show',[AlbumController::class, 'show']);
+
+Route::middleware('auth')->group(function () {
+Route::get('/contact/show',[ContactController::class, 'show'])->name('contact.show');
+Route::post('/contact/confirm',[ContactController::class, 'confirm'])->name('contact.confirm');
+Route::get('/contact/complete',[ContactController::class, 'complete'])->name('contact.complete');
+Route::get('/album/show',[AlbumController::class, 'show'])->name('albums.show');
 Route::get('/album/albumid',[AlbumController::class, 'albumid']);
-Route::get('/album/albumedit',[AlbumController::class, 'albumedit']);
-Route::get('/album/albumcreate',[AlbumController::class, 'albumcreate']);
-Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete']);
-Route::get('/rankings/ranking',[RankingController::class, 'ranking']);
+Route::get('/album/albumedit',[AlbumController::class, 'albumedit'])->name('albums.edit');
+Route::get('/album/albumcreate',[AlbumController::class, 'albumcreate'])->name('albums.create');
+Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete'])->name('albums.create.complete');
+Route::get('/rankings/ranking',[RankingController::class, 'ranking'])->name('ranking');
+});
 
 
 //Route::get('/', function () {

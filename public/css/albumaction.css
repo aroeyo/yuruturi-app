@@ -52,7 +52,7 @@
     padding: 8px 20px;
 }
 
-form {
+albumcreate {
     width: 90%;
     margin: 0 auto;
 }
@@ -69,6 +69,7 @@ height: 100px;
 .uploadarea {
     width: 100%;
     margin: 10px 0;
+    padding: 0 10px;
 }
 
 .uploadarea label {

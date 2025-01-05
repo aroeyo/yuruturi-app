@@ -15,7 +15,7 @@
 <div class="border">
 </div>
 
-<form action="{{ url('contact/confirm') }}" method="post">
+<form action="{{ url('contact/confirm') }}" method="post" class="contactform">
     @csrf
     <div class="formgroup">
         <label for="name">お名前：</label>
@@ -45,6 +45,8 @@
     </div>
 
 </form>
+
+<div class="space"></div>
 
 </div>
 

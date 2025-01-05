@@ -9,46 +9,80 @@
 
 @section('contents')
 
+@if (count($errors) > 0)
+<div class="errorview">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <div class="albumdetail">
 
-<form action="" method="POST" enctype="multipart/form-data">
+<form action="" method="POST" enctype="multipart/form-data" class="albumcreate" >
 
     <div class="uploadarea">
     <label for="image">画像をアップロード</label>
-    <input type="file" id="image" name="image" accept="image/*" class="detailimagewrapper">
+    <input type="file" id="image" name="image" accept="image/*" class="detailimagewrapper" required>
     <div id="preview" style="margin-top: 10px">
     </div>
     </div>
 
     <div class="detailinfo">
         <label for="species" class="label">魚種：</label>
-        <input type="text" id="species" name="species" class="detailform">
+        <input type="text" id="species" name="species" class="detailform" list="species-list" value="{{ old('species') }}" required>
+        <datalist id="species-list">
+            <option value="ヒラメ"></option>
+            <option value="シーバス"></option>
+            <option value="イナダ"></option>
+            <option value="ワラサ"></option>
+            <option value="ショゴ"></option>
+            <option value="カンパチ"></option>
+            <option value="マゴチ"></option>
+        </datalist>
     </div>
 
     <div class="detailinfo">
         <label for="size" class="label">大きさ：</label>
-       <input type="text" id="size" name="size" class="detailform">
+            <div class="sizearea">
+            <input type="number" id="size" name="size" min="1" max="500" style="margin-top:5px; width:80px;" value="{{ old('size') }}" required>
+        <span>cm</span>
+        </div>
     </div>
 
     <div class="detailinfo">
         <label for="catchtime" class="label">釣れた時間：</label>
-        <input type="text" id="catchtime" name="catchtime" class="detailform">
+        <input type="datetime-local" id="catchtime" name="catchtime" class="detailform" value="{{ old('catchtime') }}" required>
     </div>
 
     <div class="detailinfo">
-        <label for="lure" class="label">ルアーの種類：</label>
-        <input type="text" id="lure" name="lure" class="detailform">
+        <label for="lure" class="label">ルアー名（重量）：</label>
+        <input type="text" id="lure" name="lure" class="detailform" value="{{ old('lure') }}" required>
+        <select id="lureweight" name="lureweight" style="margin-top:5px; width:150px;" required>
+            <option value="" disabled selected>選択してください</option>
+            <option value="10">10g</option>g
+            <option value="15">15g</option>g
+            <option value="20">20g</option>g
+            <option value="25">25g</option>g
+            <option value="30">30g</option>g
+            <option value="35">35g</option>g
+            <option value="40">40g</option>g
+            <option value="45">45g</option>g
+            <option value="50">50g</option>g
+        </select>
     </div>
 
     <div class="detailinfo">
         <label for="location" class="label">場所：</label>
-        <input type="text" id="location" name="location" class="detailform">
+        <input type="text" id="location" name="location" class="detailform" value="{{ old('location') }}" required>
     </div>
 
     <div class="detailnotes">
         <label for="notes" class="label">備考：</label>
         <div class="field">
-            <textarea id="notes" name="notes"></textarea>
+            <textarea id="notes" name="notes" value="{{ old('notes') }}"></textarea>
         </div>
     </div>
 

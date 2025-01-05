@@ -31,3 +31,16 @@ body {
     transform: scale(1.10);
     cursor: pointer;
 }
+
+.userbtn {
+    background-color: #1E90FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.userbtn:hover {
+    background-color: #0000CD;
+    transform: scale(1.10);
+    cursor: pointer;
+}

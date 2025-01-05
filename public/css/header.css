@@ -40,6 +40,43 @@ hr {
     margin: 0;
 }
 
+.user-nav {
+    font-size:14px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.user-nav a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 5px;
+}
 
+.user-nav a:hover {
+    color: #00BFFF;
+}
 
+.userbtn {
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-left: 20px;
+}
+
+.user-nav button:hover {
+    background-color: #00BFFF;
+    color: #fff;
+}
+
+.submitbtn {
+    background-color: #1E90FF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.submitbtn:hover {
+    background-color: #0000CD;
+    transform: scale(1.10);
+    cursor: pointer;
+}
