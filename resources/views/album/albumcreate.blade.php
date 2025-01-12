@@ -21,11 +21,11 @@
 
 <div class="albumdetail">
 
-<form action="" method="POST" enctype="multipart/form-data" class="albumcreate" >
-
+<form action="{{ route('album.create') }}" method="POST" enctype="multipart/form-data" class="albumcreate" >
+    @csrf
     <div class="uploadarea">
     <label for="image">画像をアップロード</label>
-    <input type="file" id="image" name="image" accept="image/*" class="detailimagewrapper" required>
+    <input type="file" id="image_file" name="image_file" accept="image/*" class="detailimagewrapper" required>
     <div id="preview" style="margin-top: 10px">
     </div>
     </div>
@@ -62,15 +62,15 @@
         <input type="text" id="lure" name="lure" class="detailform" value="{{ old('lure') }}" required>
         <select id="lureweight" name="lureweight" style="margin-top:5px; width:150px;" required>
             <option value="" disabled selected>選択してください</option>
-            <option value="10">10g</option>g
-            <option value="15">15g</option>g
-            <option value="20">20g</option>g
-            <option value="25">25g</option>g
-            <option value="30">30g</option>g
-            <option value="35">35g</option>g
-            <option value="40">40g</option>g
-            <option value="45">45g</option>g
-            <option value="50">50g</option>g
+            <option value="10">10g</option>
+            <option value="15">15g</option>
+            <option value="20">20g</option>
+            <option value="25">25g</option>
+            <option value="30">30g</option>
+            <option value="35">35g</option>
+            <option value="40">40g</option>
+            <option value="45">45g</option>
+            <option value="50">50g</option>
         </select>
     </div>
 
@@ -82,18 +82,19 @@
     <div class="detailnotes">
         <label for="notes" class="label">備考：</label>
         <div class="field">
-            <textarea id="notes" name="notes" value="{{ old('notes') }}"></textarea>
+            <textarea id="notes" name="notes">{{ old('notes') }}"</textarea>
         </div>
     </div>
 
     <div class="btnarea">
         <button type="submit" class="submitbtn">作成</button>
-        <button type="buttun" class="backbtn" onclick="window.location.href='{{ url('/album/show/') }}'">戻る</button>
+        <button type="button" class="backbtn" onclick="window.location.href='{{ url('/album/show/') }}'">戻る</button>
     </div>
 </div>
+</form>
 
 <script>
-    const imageInput = document.getElementById('image');
+    const imageInput = document.getElementById('image_file');
     const preview = document.getElementById('preview');
 
     imageInput.addEventListener('change', function() {

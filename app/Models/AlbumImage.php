@@ -3,13 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AlbumImage extends Model
 {
+    protected $table = 'albumimages';
     protected $guarded = array('id');
 
     public static $rules = [
-        'image' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+        'image_file' => ['required', 'file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         'species' => ['required', 'string', 'max:50'],
         'size' => ['required', 'numeric', 'min:0', 'max:500'],
         'catchtime' => ['required', 'date', 'before_or_equal:now'],
@@ -18,4 +20,19 @@ class AlbumImage extends Model
         'location' => ['required', 'string', 'max:100'],
         'notes' => ['nullable', 'string', 'max:500'],
     ];
+
+    public function species()
+    {
+        return $this->belongsTo(Species::class);
+    }
+
+    public function location()
+    {
+        return $this->belongsTo(Location::class, 'location_id');
+    }
+
+    public function lure()
+    {
+        return $this->belongsTo(Lure::class);
+    }
 }

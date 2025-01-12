@@ -17,6 +17,7 @@ Route::get('/album/show',[AlbumController::class, 'show'])->name('albums.show');
 Route::get('/album/albumid',[AlbumController::class, 'albumid']);
 Route::get('/album/albumedit',[AlbumController::class, 'albumedit'])->name('albums.edit');
 Route::get('/album/albumcreate',[AlbumController::class, 'albumcreate'])->name('albums.create');
+Route::post('/album/albumcreate',[AlbumController::class, 'store'])->name('album.create');
 Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete'])->name('albums.create.complete');
 Route::get('/rankings/ranking',[RankingController::class, 'ranking'])->name('ranking');
 });

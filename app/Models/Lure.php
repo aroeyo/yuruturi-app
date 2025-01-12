@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lure extends Model
 {
-    //
+    protected $primaryKey = 'lure_id';
+
+    protected $fillable = ['name','luresize'];
 }
