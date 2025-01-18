@@ -34,6 +34,7 @@ class AlbumController extends Controller
     }
 
     public function albumcreate() {
+        Log::info('albumcreate method accessed.');
         return view('album/albumcreate');
     }
 

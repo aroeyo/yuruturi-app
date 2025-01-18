@@ -15,9 +15,9 @@ Route::get('/contact/show',[ContactController::class, 'show'])->name('contact.sh
 Route::post('/contact/confirm',[ContactController::class, 'confirm'])->name('contact.confirm');
 Route::get('/contact/complete',[ContactController::class, 'complete'])->name('contact.complete');
 Route::get('/album/show',[AlbumController::class, 'show'])->name('albums.show');
-Route::get('/album/{id}',[AlbumController::class, 'albumid'])->name('album.id');
+Route::get('/album/{id}',[AlbumController::class, 'albumid'])->name('album.id')->where('id', '[0-9]+');
 Route::get('/album/albumedit',[AlbumController::class, 'albumedit'])->name('albums.edit');
-Route::get('/album/albumcreate',[AlbumController::class, 'albumcreate'])->name('album.create');
+Route::get('/album/create',[AlbumController::class, 'albumcreate'])->name('albums.create');
 Route::post('/album/albumcreate',[AlbumController::class, 'store'])->name('album.create');
 Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete'])->name('albums.create.complete');
 Route::get('/rankings/ranking',[RankingController::class, 'ranking'])->name('ranking');
