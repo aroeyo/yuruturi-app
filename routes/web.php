@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RankingController;
+use App\Http\Controllers\FavoriteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[HomeController::class, 'index'])->name('home');
@@ -14,12 +15,13 @@ Route::get('/contact/show',[ContactController::class, 'show'])->name('contact.sh
 Route::post('/contact/confirm',[ContactController::class, 'confirm'])->name('contact.confirm');
 Route::get('/contact/complete',[ContactController::class, 'complete'])->name('contact.complete');
 Route::get('/album/show',[AlbumController::class, 'show'])->name('albums.show');
-Route::get('/album/albumid',[AlbumController::class, 'albumid']);
+Route::get('/album/{id}',[AlbumController::class, 'albumid'])->name('album.id');
 Route::get('/album/albumedit',[AlbumController::class, 'albumedit'])->name('albums.edit');
-Route::get('/album/albumcreate',[AlbumController::class, 'albumcreate'])->name('albums.create');
+Route::get('/album/albumcreate',[AlbumController::class, 'albumcreate'])->name('album.create');
 Route::post('/album/albumcreate',[AlbumController::class, 'store'])->name('album.create');
 Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete'])->name('albums.create.complete');
 Route::get('/rankings/ranking',[RankingController::class, 'ranking'])->name('ranking');
+Route::post('/favorites/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
 });
 
 

@@ -16,12 +16,17 @@ use Illuminate\Support\Facades\DB;
 class AlbumController extends Controller
 {
     public function show() {
+
         $albumImages = AlbumImage::with(['species','location','lure'])->get();
+        
         return view('album/show', ['albumImages' => $albumImages]);
     }
 
-    public function albumid() {
-        return view('album/albumid');
+    public function albumid($id) {
+
+        $albumImage = AlbumImage::with(['species', 'location', 'lure'])->findOrFail($id);
+
+        return view('album/albumid', ['albumImage' => $albumImage]);
     }
 
     public function albumedit() {
@@ -44,7 +49,6 @@ class AlbumController extends Controller
         $location = Location::firstOrCreate(['name' => $request->input('location')]);
 
         //フォームで送信されたイメージファイルの取得、publicディレクトリのuploadsにファイルを保存
-
         $imagePath = null;
         $imagePath = $request->file('image_file')->store('uploads', 'public');
 

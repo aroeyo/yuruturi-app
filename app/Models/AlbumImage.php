@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class AlbumImage extends Model
 {
+    protected $primaryKey = 'albumimage_id';
     protected $table = 'albumimages';
     protected $guarded = array('id');
 
@@ -23,7 +24,7 @@ class AlbumImage extends Model
 
     public function species()
     {
-        return $this->belongsTo(Species::class);
+        return $this->belongsTo(Species::class, 'species_id');
     }
 
     public function location()
@@ -33,6 +34,11 @@ class AlbumImage extends Model
 
     public function lure()
     {
-        return $this->belongsTo(Lure::class);
+        return $this->belongsTo(Lure::class, 'lure_id');
+    }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class, 'albumImage_id');
     }
 }

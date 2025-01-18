@@ -27,5 +27,6 @@
             <x-footer :showFooterMenu="$showFooterMenu ?? true" />
         </footer>
     </div>
+    @stack('scripts')
 </body>
 </html>

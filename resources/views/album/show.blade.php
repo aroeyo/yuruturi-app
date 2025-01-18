@@ -21,107 +21,33 @@
 <hr>
 
 <div class="albumlist">
+    @foreach ($albumImages as $albumImage)
     <div class="albumitem">
         <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test1.jpg')}}">
+            <img 
+                class="favorite-icon" 
+                src="{{ $albumImage->favorites->where('user_id', Auth::id())->isNotEmpty() ? asset('images/heart2.png') : asset('images/heart1.png') }}" 
+                data-albumimage-id="{{ $albumImage->albumimage_id }}" 
+                data-favorited="{{ $albumImage->favorites->where('user_id', Auth::id())->isNotEmpty() ? 'true' : 'false' }}" 
+                alt="Favorite Icon"
+            >
+            <a href="{{ route('album.id', ['id' => $albumImage->albumimage_id]) }}">
+                <img class="albumimage" src="{{asset('storage/' . $albumImage->image_file) }}">
         </div>
         <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
+            <p>{{ $albumImage->catchtime }}</p>
+            <p>{{ $albumImage->size }}</p>
         </div></a>
     </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test2.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test3.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test4.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test5.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test1.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test2.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test3.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test4.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-
-    <div class="albumitem">
-        <div class="imagewrapper">
-            <a href=""><img src="{{asset('images/test5.jpg')}}">
-        </div>
-        <div class="albuminfo">
-            <p>2024年12月8日 5時30分</p>
-            <p>86cm</p>
-        </div></a>
-    </div>
-</div>
-
-
+    @endforeach
 
 @endsection
+
+<script>
+    window.toggleFavoriteUrl = "{{ route('favorites.toggle') }}";
+    window.fovoriteHeart = "{{ asset('images/heart2.png') }}"
+    window.normalHeart = "{{ asset('images/heart1.png') }}"
+</script>
+@push('scripts')
+    <script src="{{ asset('js/favorite.js') }}"></script>
+@endpush
