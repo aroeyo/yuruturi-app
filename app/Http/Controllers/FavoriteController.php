@@ -10,10 +10,6 @@ use Illuminate\Support\Facades\Auth;
 class FavoriteController extends Controller
 {
 
-    public function show() {
-        $favoriteImages = 
-    }
-
 
     public function toggle(Request $request)
     {

@@ -3,7 +3,6 @@
 
         favoriteIcons.forEach(icon => {
             icon.addEventListener('click', async () => {
-                console.log('ボタンがクリックされました');
                 const albumImageId = icon.dataset.albumimageId;
                 const isFavorited = icon.dataset.favorited === 'true';
 
