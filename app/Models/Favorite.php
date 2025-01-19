@@ -16,6 +16,6 @@ class Favorite extends Model
 
     public function albumImage()
     {
-        return $this->belongsTo(AlbumImage::class, 'albumImage_id');
+        return $this->belongsTo(AlbumImage::class, 'albumimage_id');
     }
 }

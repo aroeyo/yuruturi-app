@@ -10,6 +10,35 @@ use Illuminate\Support\Facades\Auth;
 class FavoriteController extends Controller
 {
 
+    public function show()
+    {
+        $favorites = Favorite::with([
+            'albumImage',
+            'albumImage.species',
+            'albumImage.location',
+            'albumImage.lure',
+        ])->get();
+
+        return view('favorite/show', ['favorites' => $favorites]);
+    }
+
+    public function favoriteid($id)
+    {
+        $favorites = Favorite::with([
+            'albumImage',
+            'albumImage.species',
+            'albumImage.location',
+            'albumImage.lure',
+        ])->where('albumimage_id', $id)->firstOrFail();
+
+        return view('favorite/favoriteid', ['favorite' => $favorites]);
+    }
+
+    public function test()
+    {
+        return view('favorite/test');
+    }
+
 
     public function toggle(Request $request)
     {

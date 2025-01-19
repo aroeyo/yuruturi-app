@@ -15,30 +15,35 @@ use Illuminate\Support\Facades\DB;
 
 class AlbumController extends Controller
 {
-    public function show() {
+    public function show() 
+    {
 
         $albumImages = AlbumImage::with(['species','location','lure'])->get();
         
         return view('album/show', ['albumImages' => $albumImages]);
     }
 
-    public function albumid($id) {
+    public function albumid($id) 
+    {
 
         $albumImage = AlbumImage::with(['species', 'location', 'lure'])->findOrFail($id);
 
         return view('album/albumid', ['albumImage' => $albumImage]);
     }
 
-    public function albumedit() {
+    public function albumedit() 
+    {
         return view('album/albumedit');
     }
 
-    public function albumcreate() {
+    public function albumcreate() 
+    {
         Log::info('albumcreate method accessed.');
         return view('album/albumcreate');
     }
 
-    public function store(Request $request) {
+    public function store(Request $request) 
+    {
 
         $request->validate(AlbumImage::$rules);
 
@@ -70,7 +75,8 @@ class AlbumController extends Controller
         return redirect()->route('albums.show')->with('success', 'アルバム画像を保存しました。');  //アルバム一覧ページに遷移
     }
 
-    public function test(Request $request){
+    public function test(Request $request)
+    {
         
 
         $species = Species::firstOrCreate(['name' => $request->input('species')]);
@@ -80,7 +86,8 @@ class AlbumController extends Controller
         
     }
 
-    public function createcomplete() {
+    public function createcomplete() 
+    {
         return view('album/createcomplete');
     }
 }

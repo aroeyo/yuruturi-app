@@ -27,7 +27,7 @@
     @if(!request()->routeIs('home'))
     @auth
     <div class="user-nav">  
-            <a href="">お気に入り</a>
+            <a href="{{ route('favorite.show') }}">お気に入り</a>
             <a href="">マイページ</a>
 
             <form method="POST" action="{{ route('logout') }}">

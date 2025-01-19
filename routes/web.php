@@ -22,6 +22,9 @@ Route::post('/album/albumcreate',[AlbumController::class, 'store'])->name('album
 Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete'])->name('albums.create.complete');
 Route::get('/rankings/ranking',[RankingController::class, 'ranking'])->name('ranking');
 Route::post('/favorites/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
+Route::get('/favorite/show', [FavoriteController::class, 'show'])->name('favorite.show');
+Route::get('/favorite/{id}', [FavoriteController::class, 'favoriteid'])->name('favorite.id')->where('id', '[0-9]+');
+
 });
 
 
