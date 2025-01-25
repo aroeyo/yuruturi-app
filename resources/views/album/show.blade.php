@@ -9,13 +9,11 @@
 
 @section('contents')
 
-<div class="seacharea">
-</div>
-
-<div class="sortarea">
-</div>
-
-<div class="sortarea">
+<div class="searcharea">
+    <form action="{{ route('albums.show') }}" class="searchform" method="GET">
+        <input type="text" name="name" placeholder="魚種名を入力" value="{{ request('name') }}">
+        <button type="submit">検索</button>
+    </form>
 </div>
 
 <hr>

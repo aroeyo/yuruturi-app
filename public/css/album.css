@@ -1,9 +1,10 @@
-.seacharea {
-    height: 50px;
+.searcharea {
+    margin: 20px 0px 0px 30px;
+    height: 100px;
 }
 
-.sortarea {
-    height: 50px;
+.searchform input {
+    height: 25px;
 }
 
 .albumlist {

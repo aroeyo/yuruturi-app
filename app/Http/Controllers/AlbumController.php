@@ -15,13 +15,25 @@ use Illuminate\Support\Facades\DB;
 
 class AlbumController extends Controller
 {
-    public function show() 
+    public function show(Request $request) 
     {
 
-        $albumImages = AlbumImage::with(['species','location','lure'])->get();
+        $albumImagesQuery = AlbumImage::with(['species','location','lure']);
+
+        //検索条件：albumimageのnameカラム
+        if($request->filled('name')) {
+            $name = $request->input('name');
+            $albumImagesQuery->whereHas('species', function ($query) use ($name) {
+                $query->where('name', 'like', "%{$name}%");
+            });
+        }
+    
+        //検索結果を取得
+        $albumImages = $albumImagesQuery->get();
         
+        //検索結果をビューに渡す
         return view('album/show', ['albumImages' => $albumImages]);
-    }
+    }   
 
     public function albumid($id) 
     {
