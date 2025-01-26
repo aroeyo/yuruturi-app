@@ -14,6 +14,19 @@
         <img src="{{asset('storage/' . $albumImage->image_file) }}">
     </div>
 
+    <div class="detailset">
+    <div class="detailinfo">
+        <span class="label">釣れた時間</span>
+        <span class="value">{{ $albumImage->catchtime }}</span>
+    </div>
+
+    <div class="detailinfo">
+        <span class="label">場所</span>
+        <span class="value">{{ $albumImage->location->name }}</span>
+    </div>
+    </div>
+
+    <div class="detailset">
     <div class="detailinfo">
         <span class="label">魚種</span>
         <span class="value">{{ $albumImage->species->name }}</span>
@@ -23,12 +36,9 @@
         <span class="label">大きさ</span>
         <span class="value">{{ $albumImage->size }}</span>
     </div>
-
-    <div class="detailinfo">
-        <span class="label">釣れた時間</span>
-        <span class="value">{{ $albumImage->catchtime }}</span>
     </div>
 
+    <div class="detailset">
     <div class="detailinfo">
         <span class="label">ルアーの種類</span>
         <span class="value">{{ $albumImage->lure->name }}</span>
@@ -38,10 +48,6 @@
         <span class="label">ルアーのサイズ</span>
         <span class="value">{{ $albumImage->lure->luresize }}</span>
     </div>
-
-    <div class="detailinfo">
-        <span class="label">場所</span>
-        <span class="value">{{ $albumImage->location->name }}</span>
     </div>
 
     <div class="detailnotes">

@@ -34,7 +34,7 @@
         </div>
         <div class="albuminfo">
             <p>{{ $albumImage->catchtime }}</p>
-            <p>{{ $albumImage->size }}</p>
+            <p>大きさ：{{ $albumImage->size }}cm</p>
         </div></a>
     </div>
     @endforeach

@@ -20,7 +20,7 @@ Route::get('/album/albumedit',[AlbumController::class, 'albumedit'])->name('albu
 Route::get('/album/create',[AlbumController::class, 'albumcreate'])->name('albums.create');
 Route::post('/album/albumcreate',[AlbumController::class, 'store'])->name('album.create');
 Route::get('/album/createcomplete',[AlbumController::class, 'createcomplete'])->name('albums.create.complete');
-Route::get('/rankings/ranking',[RankingController::class, 'ranking'])->name('ranking');
+Route::get('/rankings/show',[RankingController::class, 'show'])->name('ranking.show');
 Route::post('/favorites/toggle', [FavoriteController::class, 'toggle'])->name('favorites.toggle');
 Route::get('/favorite/show', [FavoriteController::class, 'show'])->name('favorite.show');
 Route::get('/favorite/{id}', [FavoriteController::class, 'favoriteid'])->name('favorite.id')->where('id', '[0-9]+');

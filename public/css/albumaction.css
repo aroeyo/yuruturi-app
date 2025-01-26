@@ -18,6 +18,10 @@
     object-fit: contain;
 }
 
+.detailset {
+    display: flex;
+    justify-content:space-between;
+}
 .detailinfo  {
     display: flex;
     flex-direction: column;
