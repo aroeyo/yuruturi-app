@@ -21,7 +21,7 @@
 
 <div class="albumdetail">
 
-<form action="{{ route('album.create') }}" method="POST" enctype="multipart/form-data" class="albumcreate" >
+<form action="{{ route('album.create') }}" method="POST" enctype="multipart/form-data" class="albumform" >
     @csrf
     <div class="uploadarea">
     <label for="image">画像をアップロード</label>
@@ -60,7 +60,7 @@
     <div class="detailinfo">
         <label for="lure" class="label">ルアー名（重量）：</label>
         <input type="text" id="lure" name="lure" class="detailform" value="{{ old('lure') }}" required>
-        <select id="lureweight" name="lureweight" style="margin-top:5px; width:150px;" required>
+        <select id="luresize" name="luresize" style="margin-top:5px; width:150px;" required>
             <option value="" disabled selected>選択してください</option>
             <option value="10">10g</option>
             <option value="15">15g</option>

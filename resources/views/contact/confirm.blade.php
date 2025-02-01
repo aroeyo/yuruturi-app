@@ -15,31 +15,32 @@
 <div class="border">
 </div>
 
-<form action="" method="post">
+<form action="{{ route('contact.complete') }}" method="post">
+    @csrf
 
     <div class="formgroup">
         <label for="name">お名前：</label>
-        <p class="field">ここにはログイン時の名前を入れる</p>
+        <p class="field">{{ session('contactform.name')}}</p>
     </div>
 
     <div class="formgroup">
         <label for="email">メールアドレス：</label>
-        <p class="field">ここにはログイン時のアドレスを入れる</p>
+        <p class="field">{{ session('contactform.email')}}</p>
     </div>
 
     <div class="formgroup">
         <label for="messagetitle">タイトル：</label>
-        <p class="field">ここにはタイトル</p>
+        <p class="field">{{ session('contactform.messagetitle')}}</p>
     </div>
 
     <div class="formgroup">
          <label for="message">お問い合わせ内容：</label>
-        <p class="field text-area">ここには問い合わせ内容が入る</p>
+        <p class="field text-area">{{ session('contactform.message')}}</p>
     </div>
 
     <div class="btnarea">
         <button type="submit" class="submitbtn">送信</button>
-        <button type="buttun" class="backbtn" onclick="window.location.href='{{ url('/contact/show/') }}'">戻る</button>
+        <button type="button" class="backbtn" onclick="window.location.href='{{ url('/contact/show/') }}'">修正する</button>
     </div>
 
 </form>

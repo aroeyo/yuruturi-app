@@ -11,7 +11,9 @@
 }
 
 .border {
-    border: 2px #000 solid;
+    border: 1.5px #000 solid;
+    width: 500px;
+    box-sizing: border-box; 
 }
 
 .contactform {

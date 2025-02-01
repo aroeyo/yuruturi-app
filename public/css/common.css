@@ -19,14 +19,14 @@ body {
     cursor: pointer;
 }
 
-.backbtn {
+.backbtn, .deletebtn {
     background-color: #D3D3D3;
     color: #000;
     border: none;
     border-radius: 5px;
 }
 
-.backbtn:hover {
+.backbtn:hover, .deletebtn:hover {
     background-color: #708090;
     transform: scale(1.10);
     cursor: pointer;

@@ -43,7 +43,7 @@
         <ul class="main-nav">
             <li><a href="{{ route('albums.create') }}">釣果登録</a></li>
             <li><a href="{{ route('albums.show') }}">アルバム</a></li>
-            <li><a href="">気象情報</a></li>
+            <li><a href="{{ route('weather.show') }}">気象情報</a></li>
             <li><a href="{{ route('ranking.show') }}">ランキング</a></li>
             <li><a href="{{ route('contact.show') }}">問い合わせ</a></li>
         </ul>
