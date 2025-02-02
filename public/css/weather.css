@@ -1,0 +1,99 @@
+.weatherinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 70px;      
+}
+
+.tideform {
+    display: flex;
+    justify-content: center;
+}
+
+.tidedata {
+    margin: 50px 0px;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 10px;
+}
+
+.border {
+    border: 1.5px #000 solid;
+    width: 500px;
+    box-sizing: border-box; 
+}
+
+.contactform {
+    margin-top: 30px;
+}
+
+.formgroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    border-bottom: 1px #000 solid;
+}
+
+.formgroup label {
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    align-items: center;
+}
+
+.field {
+    width: 300px;
+    line-height: 0;
+}
+
+.formgroup input {
+    width: 300px;
+}
+
+.formgroup {
+    width: 500px;
+}
+
+.field textarea {
+    width: 300px;
+    height: 100px;
+}
+
+.text-area {
+    width: 300px;
+    height: 150px;
+    line-height: 20px;
+}
+
+.contactarea {
+    height: 150px;
+}
+
+.btnarea {
+    width: 500px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.submitbtn, .backbtn {
+    margin: 0 10px;
+    padding: 8px 20px;
+}
+
+.btnarea {
+    width: 500px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.confirmtext {
+    font-size: 20px;
+    text-align: center;
+}
+
+.space {
+    margin-bottom : 250px;
+}
