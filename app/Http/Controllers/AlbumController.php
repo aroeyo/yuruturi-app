@@ -20,8 +20,10 @@ class AlbumController extends Controller
 {
     public function show(Request $request) 
     {
+        $userId = Auth::id();
 
-        $albumImagesQuery = AlbumImage::with(['species','location','lure']);
+        $albumImagesQuery = AlbumImage::with(['species','location','lure'])
+            ->where('user_id', $userId);
 
         //検索条件：albumimageのnameカラム
         if($request->filled('name')) {
@@ -32,7 +34,7 @@ class AlbumController extends Controller
         }
     
         //検索結果を取得
-        $albumImages = $albumImagesQuery->get();
+        $albumImages = $albumImagesQuery->simplePaginate(50);
         
         //検索結果をビューに渡す
         return view('album/show', ['albumImages' => $albumImages]);
@@ -41,14 +43,17 @@ class AlbumController extends Controller
     public function albumid($id) 
     {
 
-        $albumImage = AlbumImage::with(['species', 'location', 'lure'])->findOrFail($id);
+        $albumImage = AlbumImage::with(['species', 'location', 'lure'])
+        ->where('user_id', Auth::id())
+        ->findOrFail($id);
 
         return view('album/albumid', ['albumImage' => $albumImage]);
     }
 
     public function albumedit($id) 
     {
-        $albumImage = AlbumImage::with(['species', 'location', 'lure'])->findOrFail($id);
+        $albumImage = AlbumImage::with(['species', 'location', 'lure'])->findOrFail($id)
+        ->where('user_id', Auth::id());
         
         return view('album/albumedit', ['albumImage' => $albumImage]);
     }
@@ -92,17 +97,6 @@ class AlbumController extends Controller
         return redirect()->route('albums.show')->with('success', 'アルバム画像を保存しました。');  //アルバム一覧ページに遷移
     }
 
-    public function test(Request $request)
-    {
-        
-
-        $species = Species::firstOrCreate(['name' => $request->input('species')]);
-        dd($species->species_id);
-        
-
-        
-    }
-
     public function createcomplete() 
     {
         return view('album/createcomplete');
@@ -118,7 +112,8 @@ class AlbumController extends Controller
         }
 
 
-        $albumImage = AlbumImage::findOrFail($id);
+        $albumImage = AlbumImage::where('user_id', Auth::id())
+            ->findOrFail($id);
 
         $species = Species::firstOrCreate(['name' => $request->input('species')]);
 
@@ -141,7 +136,8 @@ class AlbumController extends Controller
 
     public function destroy($id)
     {
-        $albumImage = AlbumImage::findOrFail($id);
+        $albumImage = AlbumImage::where('user_id', Auth::id())
+            ->findOrFail($id);
 
         $albumImage->favorites()->delete();
         $albumImage->delete();

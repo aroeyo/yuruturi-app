@@ -17,7 +17,7 @@ class FavoriteController extends Controller
             'albumImage.species',
             'albumImage.location',
             'albumImage.lure',
-        ])->get();
+        ])->where('user_id', Auth::id())->simplePaginate(50);
 
         return view('favorite/show', ['favorites' => $favorites]);
     }
@@ -29,7 +29,9 @@ class FavoriteController extends Controller
             'albumImage.species',
             'albumImage.location',
             'albumImage.lure',
-        ])->where('albumimage_id', $id)->firstOrFail();
+        ])->where('user_id', Auth::id())
+          ->where('albumimage_id', $id)
+          ->firstOrFail();
 
         return view('favorite/favoriteid', ['favorite' => $favorites]);
     }

@@ -38,6 +38,14 @@
         </div></a>
     </div>
     @endforeach
+</div>
+
+    <div class="paginatearea">
+        <div class="pagination">
+            {{ $albumImages->links() }}
+        </div>
+    </div>
+
 
 @endsection
 

@@ -22,5 +22,12 @@
         </div></a>
     </div>
     @endforeach
+</div>
+
+    <div class="paginatearea">
+        <div class="pagination">
+            {{ $favorites->links() }}
+        </div>
+    </div>
 
 @endsection
