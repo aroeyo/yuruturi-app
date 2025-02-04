@@ -17,8 +17,8 @@
 <div class="about-site">
     <div class="about">
         <a href=""><img src="{{asset('images/aboutimage1.jpg')}}" alt="About Image 1" width="250px" height="auto"></a>
-        <h3>天気情報</h3>
-        <p>最新の天気予報や潮汐情報を一目で確認。釣りに最適な時間帯を見つけるために、リアルタイムで天候や潮の動きをチェックできます。</p>
+        <h3>潮汐情報</h3>
+        <p>釣りに最適な時間帯を探すため、好きな場所や日付で潮汐情報を検索。最新の潮の動きをリアルタイムで確認できます。</p>
     </div>
     <div class="about">
         <a href=""><img src="{{asset('images/aboutimage2.jpg')}}" alt="About Image 2" width="250px" height="auto"></a>

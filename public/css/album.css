@@ -73,3 +73,7 @@ a:hover {
 .favorite-icon:hover {
     transform: scale(1.2); /* アイコンをホバーした際に拡大するアニメーション */
 }
+
+form {
+    margin: 0 !important;
+}

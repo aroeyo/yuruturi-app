@@ -1,4 +1,14 @@
-<x-app-layout>
+@extends('layouts.base')
+
+@section('title', 'ゆる釣り釣果ログ - 問い合わせページ')
+
+
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
+@endsection
+
+@section('contents')
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Profile') }}
@@ -26,4 +36,5 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+    @endsection
+

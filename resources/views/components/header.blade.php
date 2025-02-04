@@ -8,8 +8,8 @@
     @if(request()->routeIs('home'))
     @auth
         <div class="user-nav">  
-            <a href="">お気に入り</a>
-            <a href="">マイページ</a>
+            <a href="{{ route('favorite.show') }}">お気に入り</a>
+            <a href="{{ route('profile.edit') }}">マイページ</a>
 
             <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -28,7 +28,7 @@
     @auth
     <div class="user-nav">  
             <a href="{{ route('favorite.show') }}">お気に入り</a>
-            <a href="">マイページ</a>
+            <a href="{{ route('profile.edit') }}">マイページ</a>
 
             <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -43,7 +43,7 @@
         <ul class="main-nav">
             <li><a href="{{ route('albums.create') }}">釣果登録</a></li>
             <li><a href="{{ route('albums.show') }}">アルバム</a></li>
-            <li><a href="{{ route('weather.show') }}">気象情報</a></li>
+            <li><a href="{{ route('weather.show') }}">潮汐情報</a></li>
             <li><a href="{{ route('ranking.show') }}">ランキング</a></li>
             <li><a href="{{ route('contact.show') }}">問い合わせ</a></li>
         </ul>

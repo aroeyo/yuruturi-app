@@ -16,7 +16,7 @@
     <form action="{{ route('weather.show') }}" method="GET" class="tideform">
     @csrf
         <label for="port_code">港名</label>
-        <select id="port_code" name="port_code" required onchange="document.getElementById('prefecture_code').value = this.options[this.selectedIndex].getAttribute('data-prefecture')">
+        <select id="port_code" name="port_code" required onchange="document.getElementById('prefecture_code').value = this.options[this.selectedIndex].getAttribute('data-prefecture')" class="inputrange">
         @foreach($locationData as $prefectureCode => $prefecture)
             <optgroup label="{{ $prefecture['prefecture_name'] }}">
                 @foreach ($prefecture['ports'] as $port)
@@ -29,21 +29,21 @@
         <input type="hidden" id="prefecture_code" name="prefecture_code" value="">
 
     <label for="year">年</label>
-    <select id="year" name="year" required>
+    <select id="year" name="year" required class="inputrange">
         @for($i = 2024; $i <= 2100; $i++)
             <option value="{{ $i }}">{{ $i }}年</option>
         @endfor
     </select>
 
     <label for="month">月</label>
-    <select id="month" name="month" required>
+    <select id="month" name="month" required class="inputrange">
         @for($i = 1; $i <= 12; $i++)
             <option value="{{ $i }}">{{ $i }}月</option>
         @endfor
     </select>
 
     <label for="day">日</label>
-    <select id="day" name="day" required>
+    <select id="day" name="day" required class="inputrange">
         @for($i = 1; $i <= 31; $i++)
             <option value="{{ $i }}">{{ $i }}日</option>
         @endfor
