@@ -47,4 +47,3 @@ class AlbumImage extends Model
         return $this->hasMany(Favorite::class, 'albumImage_id');
     }
 }
-
