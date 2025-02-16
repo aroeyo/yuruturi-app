@@ -23,7 +23,7 @@
                         <option value="{{ $port['port_code'] }}" " data-prefecture="{{ $prefectureCode }}">{{ $port['port_name'] }}</option>
                     @endforeach
                 </optgroup>
-            @endforeach
+        @endforeach
         </select>
 
         <input type="hidden" id="prefecture_code" name="prefecture_code" value="">

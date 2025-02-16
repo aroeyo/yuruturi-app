@@ -16,7 +16,7 @@
 <div class="main">
 <div class="about-site">
     <div class="about">
-        <a href=""><img src="{{asset('images/aboutimage1.webp')}}" alt="About Image 1" width="250px" height="auto"></a>
+        <a href=""><img src="{{asset('images/aboutimage_1.webp')}}" alt="About Image 1" width="250px" height="auto"></a>
         <h3>潮汐情報</h3>
         <p>釣りに最適な時間帯を探すため、好きな場所や日付で潮汐情報を検索。最新の潮の動きをリアルタイムで確認できます。</p>
     </div>
