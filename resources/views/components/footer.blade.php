@@ -2,7 +2,7 @@
 @if($showFooterMenu)
     <div class="footer-main">
         <div class="footer-logo">
-            <a href=""><img src="{{asset('images/title-logo.png')}}" alt="サイトロゴ" class="logo" width="150px" height="auto"></a>
+            <a href=""><img src="{{asset('images/title-logo.webp')}}" alt="サイトロゴ" class="logo" width="150px" height="auto"></a>
         </div>
 
         <div class="footer-menu">

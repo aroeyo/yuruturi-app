@@ -1,6 +1,6 @@
 <div class="header-main wrapper"> 
     <div>
-        <a href="{{ route('home') }}"><img src="{{asset('images/title-logo.png')}}" alt="サイトロゴ" class="logo" width="150px" height="auto"></a>
+        <a href="{{ route('home') }}"><img src="{{asset('images/title-logo.webp')}}" alt="サイトロゴ" class="logo" width="150px" height="auto"></a>
    </div>
 
 @if($showMenu)
