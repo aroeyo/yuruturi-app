@@ -12,8 +12,11 @@ use App\Models\users;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
-
-
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Encoders\WebpEncoder;
+use Illuminate\Support\Str;
 
 
 class AlbumController extends Controller
@@ -78,7 +81,30 @@ class AlbumController extends Controller
 
         //フォームで送信されたイメージファイルの取得、publicディレクトリのuploadsにファイルを保存
         $imagePath = null;
-        $imagePath = $request->file('image_file')->store('uploads', 'public');
+
+        if ($request->hasFile('image_file')) {
+            //ファイル取得
+            $file = $request->file('image_file');
+
+            //ユニークファイル名生成
+            $ulid = Str::ulid();
+            $webpName = $ulid . 'webp';
+            $webpPath = 'upload/' . $webpName;
+
+            //Intervention Imageで画像を読み込む
+            $manager = new ImageManager(new Driver());
+            $image = $manager->read($file);
+
+            //画像をリサイズ
+            $image->scaleDown(1024,1024);
+
+            //webpでエンコード
+            $webpEncode = $image->encode(new WebpEncoder(quality: 80));
+
+            //ストレージに保存
+            Storage::disk('public')->put($webpPath, (string) $webpEncode);
+
+            $imagePath = $webpPath;
 
         //AlbumImageをインスタンス化して保存する項目の指定
         $AlbumImage = new AlbumImage([
@@ -95,6 +121,7 @@ class AlbumController extends Controller
         $AlbumImage->save();   //モデルにデータを保存
 
         return redirect()->route('albums.show')->with('success', 'アルバム画像を保存しました。');  //アルバム一覧ページに遷移
+        }
     }
 
     public function createcomplete() 

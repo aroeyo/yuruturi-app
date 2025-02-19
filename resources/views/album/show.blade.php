@@ -28,8 +28,9 @@
                 data-albumimage-id="{{ $albumImage->albumimage_id }}" 
                 data-favorited="{{ $albumImage->favorites->where('user_id', Auth::id())->isNotEmpty() ? 'true' : 'false' }}" 
                 alt="Favorite Icon"
+                loading="lazy"
             >
-            <a href="{{ route('album.id', ['id' => $albumImage->albumimage_id]) }}">
+            <a href="{{ route('album.id', ['id' => $albumImage->albumimage_id]) }}" loading="lazy">
                 <img class="albumimage" src="{{asset('storage/' . $albumImage->image_file) }}">
         </div>
         <div class="albuminfo">

@@ -15,7 +15,7 @@ class AlbumImage extends Model
     { 
         return [
         'image_file' => request()->isMethod('post')
-        ? ['required', 'file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048']
+        ? ['required', 'file', 'image', 'mimes:jpeg,png,jpg,gif', 'max:20480']
         : ['nullable', 'image', 'max:2048'],
         'species' => ['required', 'string', 'max:50'],
         'size' => ['required', 'numeric', 'min:0', 'max:500'],

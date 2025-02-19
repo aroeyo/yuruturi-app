@@ -13,7 +13,7 @@
     @foreach ($favorites as $favorite)
     <div class="albumitem">
         <div class="imagewrapper">
-            <a href="{{ route('favorite.id', ['id' => $favorite->albumImage->albumimage_id]) }}">
+            <a href="{{ route('favorite.id', ['id' => $favorite->albumImage->albumimage_id]) }}" loading="lazy">
                 <img class="albumimage" src="{{asset('storage/' . $favorite->albumImage->image_file) }}">
         </div>
         <div class="albuminfo">
