@@ -55,8 +55,10 @@ class AlbumController extends Controller
 
     public function albumedit($id) 
     {
-        $albumImage = AlbumImage::with(['species', 'location', 'lure'])->findOrFail($id)
-        ->where('user_id', Auth::id());
+        $albumImage = AlbumImage::with(['species', 'location', 'lure'])
+        ->where('user_id', Auth::id())
+        ->where('albumimage_id', $id)
+        ->findOrFail($id);
         
         return view('album/albumedit', ['albumImage' => $albumImage]);
     }

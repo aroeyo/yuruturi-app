@@ -32,6 +32,7 @@
             >
             <a href="{{ route('album.id', ['id' => $albumImage->albumimage_id]) }}" loading="lazy">
                 <img class="albumimage" src="{{asset('storage/' . $albumImage->image_file) }}">
+            </a>
         </div>
         <div class="albuminfo">
             <p>{{ $albumImage->catchtime }}</p>
