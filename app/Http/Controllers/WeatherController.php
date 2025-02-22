@@ -71,7 +71,7 @@ class WeatherController extends Controller
 
     private function getLocationData()
     {
-        $filePath = storage_path('app/tide.csv');
+        $filePath = database_path('seeders/data/tide.csv');
         
         // ファイルが存在しない場合は空の配列を返す
         if (!file_exists($filePath)) {
