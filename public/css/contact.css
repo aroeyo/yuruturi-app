@@ -87,3 +87,96 @@
 .space {
     margin-bottom : 250px;
 }
+
+
+/* スマホ表示用のスタイル */
+@media screen and (max-width: 480px) {
+    .contact {
+        width: 95%;
+        max-width: 400px;
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+
+    .contact h2 {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .confirmtext {
+        font-size: 1.1rem;
+        margin: 20px 0;
+    }
+
+    .border {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    /* フォームグループのレイアウト調整 */
+    .formgroup {
+        flex-direction: column;
+        border: none;
+        border-bottom: 1px solid #000;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .formgroup label {
+        width: 100%;
+        height: auto;
+        line-height: normal;
+        margin-bottom: 10px;
+    }
+
+    .field {
+        width: 100%;
+        line-height: 1.5;
+    }
+
+    /* 入力フィールドの調整 */
+    .field input,
+    .field textarea {
+        width: 100%;
+        padding: 8px;
+    }
+
+    /* テキストエリアの高さ調整 */
+    .text-area,
+    .field textarea {
+        height: 120px;
+        line-height: 1.5;
+    }
+
+    .contactarea {
+        height: auto;
+        min-height: 150px;
+    }
+
+    /* ボタンエリアの調整 */
+    .btnarea {
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .submitbtn,
+    .backbtn {
+        width: 100%;
+        margin: 0;
+        padding: 12px;
+    }
+
+    /* 完了ページのボタン位置調整 */
+    .btnposition {
+        margin-top: 20px;
+    }
+
+    /* 下部スペースの調整 */
+    .space {
+        margin-bottom: 100px;
+    }
+}

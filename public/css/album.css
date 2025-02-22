@@ -10,9 +10,10 @@
 .albumlist {
     max-width: calc(150px * 5 + 20px * 4);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+    grid-template-columns:  repeat(5, 1fr);
     gap: 20px;
     margin: 30px auto;
+    padding: 0 10px; 
 }
 
 .albumitem {
@@ -35,6 +36,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
+    display: block;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -120,5 +122,33 @@ form {
     border-color: #ccc;
 }
 
+@media (max-width: 900px) {
+    .albumlist {
+        max-width: calc(150px * 4 + 20px * 3); /* 4列分の幅 */
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
 
 
+@media (max-width: 480px) {
+    .albumlist {
+        max-width: calc(120px * 3 + 10px * 2);
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+        gap: 10px;
+        padding: 0 5px;
+    }
+    
+    .albumitem {
+        width: 100%; /* はみ出し防止 */
+        max-width: 100px; /* 最大サイズを制限 */
+    }
+
+    .imagewrapper {
+        width: 100px;
+        height: 120px; /* アスペクト比を維持 */
+    }
+
+    .albuminfo {
+        font-size: 10px;
+    }
+}

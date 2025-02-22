@@ -100,3 +100,66 @@ height: 100px;
     align-items: center; 
     margin-top: 70px;   
 }
+
+
+/* スマホ表示用のスタイル */
+@media screen and (max-width: 480px) {
+    .albumdetail {
+        width: 90%;
+        margin: 0 auto;
+        padding: 15px;
+        border: none;
+    }
+
+    .detailinfo {
+        margin: 10px 0;
+    }
+
+    /* 通常のフォーム入力欄 */
+    .detailform {
+        width: 350px;
+        max-width: 95%;
+    }
+
+    /* 大きさ入力エリアは既存サイズを維持 */
+    #size {
+        width: 80px !important;
+    }
+
+    /* ルアーサイズは既存サイズを維持 */
+    #luresize {
+        width: 150px !important;
+    }
+
+    /* 画像プレビュー */
+    #preview img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 備考欄 */
+    #notes {
+        width: 350px;
+        max-width: 95%;
+        height: 100px;
+    }
+
+    /* エラーメッセージ */
+    .errorview {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    /* ボタンエリア */
+    .btnarea {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .submitbtn,
+    .backbtn {
+        width: 200px;
+    }
+}

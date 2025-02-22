@@ -49,3 +49,38 @@
     line-height: 50px;
     padding-right: 20px;
 }
+
+/* スマホ表示用のスタイル */
+@media screen and (max-width: 480px) {
+    .footer-main {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .footer-logo {
+        margin: 0 0 20px 0;
+    }
+
+    .footer-menu {
+        text-align: center;
+    }
+
+    .footer-menu p {
+        line-height: normal;
+        margin-bottom: 15px;
+    }
+
+    .footer-menu ul {
+        padding: 0;
+    }
+
+    .footer-menu li {
+        margin: 10px 0;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-right: 0;
+    }
+}

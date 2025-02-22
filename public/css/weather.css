@@ -28,3 +28,69 @@
 .space {
     margin-bottom : 250px;
 }
+
+
+/* スマホ表示用のスタイル */
+@media screen and (max-width: 480px) {
+    .weatherinfo {
+        width: 95%;
+        max-width: 400px;
+        margin: 30px auto;
+    }
+
+    .weatherinfo h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    /* フォームのレイアウト調整 */
+    .tideform {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    /* 入力項目の調整 */
+    .tideform label {
+        margin: 10px 0 5px;
+        display: block;
+    }
+
+    .inputrange {
+        width: 100%;
+        margin: 0 0 10px;
+        padding: 8px;
+        font-size: 16px;
+    }
+
+    /* 検索ボタン */
+    .tideform button {
+        width: 100%;
+        margin: 20px 0;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /* 潮汐データの表示調整 */
+    .tidedata {
+        width: 100%;
+        margin: 30px 0;
+        padding: 0 15px;
+    }
+
+    .tidedata h2 {
+        font-size: 1.3rem;
+        margin: 15px 0;
+    }
+
+    .tidedata img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 下部スペースの調整 */
+    .space {
+        margin-bottom: 100px;
+    }
+}

@@ -35,24 +35,6 @@
     width: 20%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 seacharea {
     height: 50px;
 }
@@ -111,4 +93,51 @@ a:hover {
 
 .albumitem:hover {
     transform: scale(1.05);
+}
+
+
+/* スマホ表示用のスタイル */
+@media screen and (max-width: 480px) {
+    .rankingarea {
+        width: 95%;
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .rankinglist {
+        margin-bottom: 50px;
+    }
+
+    .rankingtitle {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .rankingitem {
+        font-size: 0.9rem;
+    }
+
+    /* ランキング項目の幅調整 */
+    .rank {
+        width: 25%;
+    }
+
+    .rankname {
+        width: 50%;
+        /* ルアー名が長い場合の対応 */
+        word-break: break-all;
+        font-size: 0.85rem;
+    }
+
+    .rankscore {
+        width: 25%;
+    }
+
+    /* 各セルの余白調整 */
+    .rank, 
+    .rankname, 
+    .rankscore {
+        padding: 8px 4px;
+    }
 }

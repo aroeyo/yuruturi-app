@@ -1,6 +1,7 @@
 .header-main {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .wrapper {
@@ -8,10 +9,15 @@
     padding: 0 4%;
 }
 
+.logo {
+    width: 150px; 
+    height: auto;
+}
+
 .main-nav {
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0;
     list-style:none;
     font-size:16px; 
 }
@@ -44,7 +50,7 @@ hr {
     font-size:14px; 
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 10px;
 }
 
 .user-nav a {
@@ -79,4 +85,170 @@ hr {
     background-color: #0000CD;
     transform: scale(1.10);
     cursor: pointer;
+}
+
+/* ハンバーガーメニューの基本スタイル（通常時は非表示） */
+.menu-trigger {
+    display: none;
+    width: 30px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1002;
+}
+
+.menu-trigger span {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.4s;
+}
+
+.sp-menu {
+    display: none;
+}
+
+
+.menu-trigger span:nth-of-type(1) { top: 0; }
+.menu-trigger span:nth-of-type(2) { top: 11px; }
+.menu-trigger span:nth-of-type(3) { bottom: 0; }
+
+/* スマホ表示用のスタイル */
+@media screen and (max-width: 480px) {
+    .header-main {
+        position: relative;
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+    }
+
+    /* 既存のuser-navを非表示 */
+    .header-main > .user-nav {
+        display: none;
+    }
+
+    /* ハンバーガーメニューを表示 */
+    .menu-trigger {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1002;
+    }
+
+    .menu-trigger span {
+        display: inline-block;
+    }
+
+    /* ナビゲーションメニューのスタイル */
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 250px;
+        height: 100vh;
+        background: #fff;
+        transition: 0.3s ease-in-out;
+        padding-top: 60px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        overflow-y: auto;
+    }
+
+    /* メインナビゲーションのスタイル */
+    .main-nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .main-nav li {
+        width: 100%;
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .main-nav li:not(:last-child) a::after {
+        display: none;
+    }
+
+    /* スマホ用メニューのスタイル */
+    .sp-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        border-top: 1px solid #eee;
+        margin-top: 20px;
+    }
+
+    .sp-menu a,
+    .sp-menu .userbtn {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+        padding: 10px;
+        color: #000;
+        text-decoration: none;
+        background: none;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .sp-menu a:hover,
+    .sp-menu .userbtn:hover {
+        color: #00BFFF;
+    }
+
+    .sp-menu form {
+        width: 100%;
+        margin: 0;
+    }
+
+    .sp-menu .userbtn {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+    }
+
+    /* メニューが開いているときのスタイル */
+    body.menu-open nav {
+        right: 0;
+    }
+
+    body.menu-open .menu-trigger span:nth-of-type(1) {
+        transform: translateY(11px) rotate(-45deg);
+    }
+
+    body.menu-open .menu-trigger span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    body.menu-open .menu-trigger span:nth-of-type(3) {
+        transform: translateY(-11px) rotate(45deg);
+    }
+
+    /* オーバーレイ */
+    body.menu-open::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    /* hrの位置調整 */
+    hr {
+        margin-top: 0;
+        position: relative;
+        z-index: 999;
+    }
 }

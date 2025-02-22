@@ -48,3 +48,41 @@
 .about img:hover {
     opacity: 0.7;
 }
+
+/* スマホ表示用のスタイル */
+@media screen and (max-width: 480px) {
+    .main {
+        width: 400px;
+        padding: 0 15px;
+    }
+
+    .banner {
+        height: 200px;
+    }
+
+    .about-site {
+        width: 100%;
+        max-width: 380px;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about {
+        width: 100%;
+        max-width: 380px;
+        height: auto;
+    }
+
+    .about img {
+        width: 100%;
+        max-width: 250px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .about p {
+        width: 90%;
+        max-width: 200px;
+        margin: 10px auto;
+    }
+}
