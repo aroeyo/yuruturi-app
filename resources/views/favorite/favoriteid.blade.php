@@ -49,10 +49,6 @@
         <span class="notes">{{ $favorite->albumImage->notes }}
         </span>
     </div>
-
-    <div class="btnarea">
-        <button type="submit" class="submitbtn">確認</button>
-    </div>
 </div>
 
 
